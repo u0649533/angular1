@@ -1,0 +1,7 @@
+<div class = "dia-box">
+    <app-button (click) = "clear()">Clear</app-button>
+   {{dialog}}
+    
+</div>
+
+<app-form [dialog] = "dialog" (keyup) = "receiveMessage($event)"></app-form>

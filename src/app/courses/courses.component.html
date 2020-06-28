@@ -1,0 +1,53 @@
+<h2>{{title}}</h2> <!--interpolation-->
+<h2 [textContent] = "title"></h2>  <!--property binding-->
+
+
+<ul>
+    <li *ngFor = "let course of courses">
+        {{course}}
+    </li>
+</ul>
+
+<!--property binding-->
+
+<img [src]="imageUrl" alt="pic">
+
+<!--attribute binding colspan is not a property of dom element but an attribute of html tag  so use attribute binding-->
+
+<table>
+    <tr>
+        <td [attr.colspan] = "colSpan">2</td>
+    </tr>
+    <tr>
+        <td >1</td>
+        <td >1</td>
+    </tr>
+</table>
+
+<!--bootstrap example with class binding   add active class to the tag dynamically based on some condition-->
+<button class = "btn btn-primary" [class.active] = "isActive" >Example</button>
+<!--style binding  if isactive is true give it blue color-->
+<button class = "btn" [style.backgroundColor] = "isActive ? 'aqua':'grey'" >Example</button>  
+<!--event binding careful about event bubbling-->
+
+<div (click)="alertBox($event)">
+<button class="btn btn-secondary" (click)="alertBox($event)">alert</button>
+</div>
+
+<!--event filtering careful about event bubbling-->
+<br>
+<input (keyup.enter) = "onKeyUp()"/>
+<br>
+<input #email (keyup.enter) = "onKeyUp2(email.value)"/>
+
+
+
+<!--two way binding-->
+
+<br>
+<input [value] = "email3" (keyup.enter) = "email3 = $event.target.value; onKeyUp3()"/>
+
+<!--custom pipe-->
+<br>
+<br>
+<p>{{text|summary}}</p>

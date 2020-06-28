@@ -1,0 +1,16 @@
+label{
+    display: block;
+    color:tomato;
+    font-size: 1rem;
+    font-weight: 600;
+
+}
+ input{
+    height:35px;
+    width:300px;
+    border-radius: 5px;
+    background-color: aquamarine;
+    outline: none;
+    border: none;
+    color:grey;
+ }
